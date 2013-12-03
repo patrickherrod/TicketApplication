@@ -1,0 +1,97 @@
+Use Cases
+-------------
+Scenario 1: User exits the application
+1) User clicks 'File' from header menu
+2) User selects 'Exit' from the drop down menu
+3) System will close the application
+
+Scenario 2: User wants to see a particular student's progress in all categories
+1) User clicks 'check student's progress' button on home screen
+2) System prompts user with two buttons: 'All Students' or 'Single Student' (referring to category)
+3) User clicks on the 'All' option
+4) System will show a Jlist of students enrolled (Course.studList)
+5) User will select desired student
+6) System will get the tickets associated with the student in all categories (Student.getTickets())
+7) System will display imported tickets in a scrollable window
+8) User will close window
+
+Scenario 3: User wants to see a student's progress in a specific category
+1) User clicks 'check student's progress' button on home screen
+2) System prompts user with two buttons: 'All Students' or 'Single Student' (referring to category)
+3) User clicks on the 'Single' option
+4) System will show a list of students enrolled (Course.studList)
+5) User will select desired student
+6) System will ask which category (Course.tickCat)
+7) User selects the category
+8) System will get the tickets associated with the student in that category (Student.getTickets())
+9) System will display imported tickets in a scrollable window
+10) User will close window
+
+Scenario 4: User Scans in ticket
+1) User clicks 'Scan Ticket' button on home screen
+2) System will access the barcode reader
+3) System will show a Jlist of the students enrolled
+4) User will select a student from the list
+5) User/Student will place ticket under the reader
+6) System will scan the ticket and obtain the category and the point value associated
+7) System will add the information to the array/s relating to the student
+8) System will let user know that scanning was successful
+
+	Alternate/Error
+	3A1: User does not select a student
+	1) System will show box saying "Please select a student"
+	2) User will select a student
+	
+	4A1: The ticket does not have a valid barcode or cannot scan
+	1) System will try scanning again
+	2) After 'x' times, System will prompt user with message saying 'invalid barcode'
+	3) System will revert back to home screen
+	
+	5A1: System recognizes ticket, but ticket has already been scanned
+	1) System will realize corresponding parts in the array/s is/are full
+	2) System will prompt user with message saying 'ticket already submitted'
+	3) System will revert back to home screen
+	
+Scenario 5: User wants to generate a printable sheet with students and tickets submitted
+1) User clicks 'File' from the header menu
+2) User selects 'Print' from the drop down menu
+3) System generates an organized pdf/csv(?) file from the arrays (studList, student.contains())
+4) Systems prompts user with option to 'print' or 'cancel'
+5) User selects 'print'
+6) System prints the organized information
+	
+Scenario 6: User wants to see class progress for a certain ticket category
+1) User clicks 'check ticket category progress' button on home screen
+2) System will show a Jlist of students enrolled with their progress next to the student (Course.studList)
+3) User can scroll through list
+4) User will close window 	
+	
+Scenario 7: Student enrolls in class
+1) User clicks 'Add Student' button on home screen
+2) System will create a new 'student' (course.addStudent())
+3) System asks user to type in student name/username
+4) User enters new students name
+5) System adds new element in the array
+6) System lets user know implementation is complete
+	
+Scenario 8: Student drops class
+1) User clicks 'Drop Student' button on home screen'
+2) System will prompt user with Jlist of student
+3) User selects student's name
+4) System deletes the element in the array of the students
+5) System lets user know deletion is complete	
+
+Scenario 9: User creates new course
+1) User clicks 'edit courses' button on home screen
+2) System prompts with 'add' or 'remove'
+3) User clicks 'add'
+4) System will create a new 'course'
+5) System asks user to type in new course name
+6) User enters new course name
+7) System adds new empty set for the Students and Tickets
+8) System lets user know implementation of course is complete
+	
+	
+	
+	
+	
